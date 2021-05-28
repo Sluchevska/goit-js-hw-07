@@ -1,0 +1,12 @@
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-left: -30px;
+}
+
+.image-decor {
+  width: 370px;
+  height: 200px;
+  margin-left: 30px;
+}

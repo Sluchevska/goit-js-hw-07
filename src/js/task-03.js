@@ -18,12 +18,17 @@ const images = [
 
 const picturesEl = images.map(option => {
 
-    const image = document.createElement('img');
-    image.setAttribute('url', option.url)
-    image.setAttribute('alt', option.alt)
-    console.log(image)
+    const image = document.createElement('li');
+    image.insertAdjacentHTML('afterbegin', `<img src = ${option.url} alt = '${option.alt}' class = "image-decor">`)
     return image
 })
 
-const picAdd = document.createElement('li')
+const gallery = document.querySelector('#gallery')
+gallery.append(...picturesEl)
+console.log(gallery)
+
+// Oformlenie
+
+
+
     
