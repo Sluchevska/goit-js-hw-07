@@ -15,6 +15,6 @@ const elements = ingredients.map(ingredient => {
     return ingrEl
 })
 
-console.log(elements)
+
 const addIngrEl = document.querySelector('#ingredients')
 addIngrEl.append(...elements)
