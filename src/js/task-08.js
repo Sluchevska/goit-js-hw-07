@@ -10,18 +10,14 @@ const createBoxes = (amount) => {
     for (let i = 0; i < amount; i += 1){
         const boxes = document.createElement('div')
         boxes.classList.add('boxes')
-        // const getRandom = (min, max)=>{
-        //     return Math.ceil(Math.random()*(max-min)+min)
-        // }
-        boxes.style.backgroundColor = `red`
-        boxes.style.height = 30 +'px'
-        boxes.style.width = 30 + 'px'
-        boxes.style.border = 1 + 'px'
-
-
+     
+        boxes.style.height = 30 + i * 10 + 'px'
+        boxes.style.width = 30 + i * 10 + 'px'        
+        boxes.style.backgroundColor = Math.floor(Math.random()*256)
+    
         boxHolder.appendChild(boxes)
     }
-             console.log(amount)
+            
    
     console.log(boxHolder)
    
