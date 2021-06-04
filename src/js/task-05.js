@@ -3,9 +3,14 @@ const spanText = document.querySelector('#name-output');
 console.log(spanText);
 
 const onInputChange = (event) => {
-   
-  spanText.textContent = event.currentTarget.value  || 'незнакомец';
-}
+console.log( event.currentTarget.value )
+  // if (spanText.textContent =='') {
+  //    spanText.textContent ='незнакомец'
+  // }
+ 
+  // spanText.textContent = event.currentTarget.value 
+spanText.textContent = event.currentTarget.value  || 'незнакомец';
+ }
 
 inputHolder.addEventListener('input', onInputChange);
 

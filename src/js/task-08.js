@@ -7,9 +7,9 @@ const destroy = document.querySelector('button[data-action="destroy"]')
 const createBoxes = (amount) => {
    
     amount = inputHolder.value
+    const divs = [];
     for (let i = 0; i < amount; i += 1){
         const boxes = document.createElement('div')
-        boxes.classList.add('boxes')
              
         boxes.style.height = 30 + i * 10 + 'px'
         boxes.style.width = 30 + i * 10 + 'px'
@@ -18,21 +18,18 @@ const createBoxes = (amount) => {
         const color2 = Math.floor(Math.random() * 256)
         boxes.style.backgroundColor = 'rgb('+color+','+color1+','+color2+')'
       
-        
+        divs.push(boxes)
     
-        boxHolder.appendChild(boxes)
+        
     }
-   
+   boxHolder.append(...divs)
 }
 
-const destroyBoxes = (amount) => {
-    amount = inputHolder.value
+const destroyBoxes = () => {
    
-    for (let i = 1; i <= amount; i += 1)
-    {
-      
-        boxHolder.removeChild(boxHolder.querySelector('.boxes'))
-    }
+    boxHolder.innerHTML = '';
+    inputHolder.value = '';
+   
     
 }
 

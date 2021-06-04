@@ -16,18 +16,22 @@ const images = [
   },
 ];
 
-const picturesEl = images.map(option => {
-
-    const image = document.createElement('li');
-    image.insertAdjacentHTML('afterbegin', `<img src = ${option.url} alt = '${option.alt}' class = "image-decor">`)
-    return image
-})
-
+const createGallery=(images)=> {
+  return images
+    .map(({ url, alt }) => {
+      return `<li><img src = "${url}" alt = "${alt}" class = "image-decor"></li>`;
+    
+    })
+    .join('');
+}
+const gallerySet = createGallery(images)
 const gallery = document.querySelector('#gallery')
-gallery.append(...picturesEl)
+gallery.insertAdjacentHTML('afterbegin', gallerySet )
+
 console.log(gallery)
 
-// Oformlenie
+
+
 
 
 
