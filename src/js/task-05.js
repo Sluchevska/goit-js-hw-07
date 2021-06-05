@@ -9,7 +9,7 @@ console.log( event.currentTarget.value )
   // }
  
   // spanText.textContent = event.currentTarget.value 
-spanText.textContent = event.currentTarget.value  || 'незнакомец';
+spanText.textContent = event.currentTarget.value.trim()  || 'незнакомец';
  }
 
 inputHolder.addEventListener('input', onInputChange);
